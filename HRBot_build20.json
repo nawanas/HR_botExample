@@ -1,0 +1,2787 @@
+{
+  "luis_schema_version": "7.0.0",
+  "intents": [
+    {
+      "name": "Greeting",
+      "features": []
+    },
+    {
+      "name": "Leave Action",
+      "features": [
+        {
+          "featureName": "first person words",
+          "isRequired": false
+        },
+        {
+          "modelName": "leave phrase",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "name": "Leave Days Inquiry",
+      "features": [
+        {
+          "featureName": "leave taken inquiry words",
+          "isRequired": false
+        },
+        {
+          "featureName": "question mark",
+          "isRequired": false
+        },
+        {
+          "modelName": "leave inquiry request",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "name": "Manager Approval Action",
+      "features": [
+        {
+          "modelName": "leave phrase",
+          "isRequired": false
+        },
+        {
+          "modelName": "approval actions",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "name": "None",
+      "features": []
+    },
+    {
+      "name": "Thanks",
+      "features": []
+    }
+  ],
+  "entities": [
+    {
+      "name": "leave inquiry request",
+      "children": [
+        {
+          "name": "request type",
+          "children": [],
+          "features": [
+            {
+              "modelName": "inquiry request type",
+              "isRequired": false
+            }
+          ]
+        },
+        {
+          "name": "leave type",
+          "children": [],
+          "features": [
+            {
+              "featureName": "leave types",
+              "isRequired": false
+            }
+          ]
+        },
+        {
+          "name": "request period",
+          "children": [],
+          "features": [
+            {
+              "featureName": "time period words",
+              "isRequired": false
+            }
+          ]
+        },
+        {
+          "name": "person",
+          "children": [],
+          "features": [
+            {
+              "featureName": "i word",
+              "isRequired": false
+            },
+            {
+              "modelName": "personName",
+              "isRequired": false
+            }
+          ]
+        },
+        {
+          "name": "manager",
+          "children": [],
+          "features": []
+        }
+      ],
+      "roles": [],
+      "features": []
+    },
+    {
+      "name": "leave phrase",
+      "children": [
+        {
+          "name": "Leave Type",
+          "children": [],
+          "features": [
+            {
+              "featureName": "leave types",
+              "isRequired": false
+            }
+          ]
+        },
+        {
+          "name": "Leave Dates Phrase",
+          "children": [
+            {
+              "name": "Start Date",
+              "children": [],
+              "features": [
+                {
+                  "featureName": "start date words",
+                  "isRequired": false
+                },
+                {
+                  "modelName": "datetimeV2",
+                  "isRequired": false
+                }
+              ]
+            },
+            {
+              "name": "End Date",
+              "children": [],
+              "features": [
+                {
+                  "featureName": "end date words",
+                  "isRequired": false
+                },
+                {
+                  "modelName": "datetimeV2",
+                  "isRequired": false
+                }
+              ]
+            }
+          ],
+          "features": [
+            {
+              "featureName": "start date words",
+              "isRequired": false
+            },
+            {
+              "featureName": "end date words",
+              "isRequired": false
+            }
+          ]
+        },
+        {
+          "name": "Duration",
+          "children": [],
+          "features": [
+            {
+              "featureName": "time period words",
+              "isRequired": false
+            }
+          ]
+        },
+        {
+          "name": "Reason",
+          "children": [],
+          "features": []
+        },
+        {
+          "name": "Leave submission modifier",
+          "children": [],
+          "features": [
+            {
+              "modelName": "leave submission modifications",
+              "isRequired": true
+            }
+          ]
+        },
+        {
+          "name": "New dates phrase",
+          "children": [
+            {
+              "name": "New Start Date",
+              "children": [],
+              "features": [
+                {
+                  "featureName": "start date words",
+                  "isRequired": false
+                },
+                {
+                  "modelName": "datetimeV2",
+                  "isRequired": false
+                }
+              ]
+            },
+            {
+              "name": "New End Date",
+              "children": [],
+              "features": [
+                {
+                  "featureName": "end date words",
+                  "isRequired": false
+                },
+                {
+                  "modelName": "datetimeV2",
+                  "isRequired": false
+                }
+              ]
+            }
+          ],
+          "features": []
+        },
+        {
+          "name": "Manager Action",
+          "children": [],
+          "features": [
+            {
+              "modelName": "approval actions",
+              "isRequired": true
+            }
+          ]
+        },
+        {
+          "name": "Requestor",
+          "children": [],
+          "features": [
+            {
+              "modelName": "personName",
+              "isRequired": false
+            }
+          ]
+        }
+      ],
+      "roles": [],
+      "features": []
+    }
+  ],
+  "hierarchicals": [],
+  "composites": [],
+  "closedLists": [
+    {
+      "name": "approval actions",
+      "subLists": [
+        {
+          "canonicalForm": "Approve",
+          "list": [
+            "accept",
+            "is ok",
+            "it's ok",
+            "approve"
+          ]
+        },
+        {
+          "canonicalForm": "Disapprove",
+          "list": [
+            "reject",
+            "delete",
+            "cancel",
+            "decline",
+            "declined",
+            "rejected",
+            "deleted",
+            "canceled",
+            "disapprove"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "inquiry request type",
+      "subLists": [
+        {
+          "canonicalForm": "remaining",
+          "list": [
+            "remain",
+            "left",
+            "left over"
+          ]
+        },
+        {
+          "canonicalForm": "used",
+          "list": [
+            "use"
+          ]
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "leave submission modifications",
+      "subLists": [
+        {
+          "canonicalForm": "delete",
+          "list": [
+            "cancel",
+            "remove"
+          ]
+        },
+        {
+          "canonicalForm": "edit",
+          "list": [
+            "update",
+            "change",
+            "reschedule"
+          ]
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "prebuiltEntities": [
+    {
+      "name": "datetimeV2",
+      "roles": []
+    },
+    {
+      "name": "number",
+      "roles": []
+    },
+    {
+      "name": "personName",
+      "roles": []
+    }
+  ],
+  "utterances": [
+    {
+      "text": "accept bob's parternity leave",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 28,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 0,
+              "endPos": 5,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 7,
+              "endPos": 9,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 13,
+              "endPos": 28,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "accept nayer request for bereavement",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 35,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 0,
+              "endPos": 5,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 7,
+              "endPos": 11,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 25,
+              "endPos": 35,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "approve carol's maternity leave",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 30,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 0,
+              "endPos": 6,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 8,
+              "endPos": 12,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 16,
+              "endPos": 30,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "approve chris' childcare leave",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 29,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 0,
+              "endPos": 6,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 8,
+              "endPos": 12,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 15,
+              "endPos": 29,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "approve jeremy's vacation request for june",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 41,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 0,
+              "endPos": 6,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 8,
+              "endPos": 13,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 17,
+              "endPos": 24,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 38,
+              "endPos": 41,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "can you tell me a joke?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "can you tell me about my health benefits?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "cancel my childcare leave",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 24,
+          "children": [
+            {
+              "entity": "Leave submission modifier",
+              "startPos": 0,
+              "endPos": 5,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 10,
+              "endPos": 24,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "cancel my childcare leave scheduled for july",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 43,
+          "children": [
+            {
+              "entity": "Leave submission modifier",
+              "startPos": 0,
+              "endPos": 5,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 10,
+              "endPos": 24,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 40,
+              "endPos": 43,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "cancel my vacation",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 17,
+          "children": [
+            {
+              "entity": "Leave submission modifier",
+              "startPos": 0,
+              "endPos": 5,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 10,
+              "endPos": 17,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "change my vacation to start on june 3rd instead of june 17th",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 59,
+          "children": [
+            {
+              "entity": "Leave submission modifier",
+              "startPos": 0,
+              "endPos": 5,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 10,
+              "endPos": 17,
+              "children": []
+            },
+            {
+              "entity": "New dates phrase",
+              "startPos": 22,
+              "endPos": 38,
+              "children": [
+                {
+                  "entity": "New Start Date",
+                  "startPos": 31,
+                  "endPos": 38,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 51,
+              "endPos": 59,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 51,
+                  "endPos": 59,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "decline john's request for vacation next month because he has big project due",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 76,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 0,
+              "endPos": 6,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 8,
+              "endPos": 11,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 27,
+              "endPos": 34,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 36,
+              "endPos": 45,
+              "children": []
+            },
+            {
+              "entity": "Reason",
+              "startPos": 47,
+              "endPos": 76,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "decline peter's request for unpaid leave",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 39,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 0,
+              "endPos": 6,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 8,
+              "endPos": 12,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 28,
+              "endPos": 39,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "delete my scheduled vacation",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 27,
+          "children": [
+            {
+              "entity": "Leave submission modifier",
+              "startPos": 0,
+              "endPos": 5,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 20,
+              "endPos": 27,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "do i have any sick days left?",
+      "intent": "Leave Days Inquiry",
+      "entities": [
+        {
+          "entity": "leave inquiry request",
+          "startPos": 0,
+          "endPos": 27,
+          "children": [
+            {
+              "entity": "person",
+              "startPos": 3,
+              "endPos": 3,
+              "children": []
+            },
+            {
+              "entity": "leave type",
+              "startPos": 14,
+              "endPos": 22,
+              "children": []
+            },
+            {
+              "entity": "request type",
+              "startPos": 24,
+              "endPos": 27,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "go ahead and approve amal's vacation for the 30th",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 13,
+          "endPos": 48,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 13,
+              "endPos": 19,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 21,
+              "endPos": 24,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 28,
+              "endPos": 35,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 41,
+              "endPos": 48,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 45,
+                  "endPos": 48,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "got it",
+      "intent": "Thanks",
+      "entities": []
+    },
+    {
+      "text": "great",
+      "intent": "Thanks",
+      "entities": []
+    },
+    {
+      "text": "great, thanks",
+      "intent": "Thanks",
+      "entities": []
+    },
+    {
+      "text": "hazem's request is approved",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 26,
+          "children": [
+            {
+              "entity": "Requestor",
+              "startPos": 0,
+              "endPos": 4,
+              "children": []
+            },
+            {
+              "entity": "Manager Action",
+              "startPos": 19,
+              "endPos": 26,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "hello",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hey there",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "how many childcare days have i used?",
+      "intent": "Leave Days Inquiry",
+      "entities": [
+        {
+          "entity": "leave inquiry request",
+          "startPos": 0,
+          "endPos": 34,
+          "children": [
+            {
+              "entity": "leave type",
+              "startPos": 9,
+              "endPos": 22,
+              "children": []
+            },
+            {
+              "entity": "person",
+              "startPos": 29,
+              "endPos": 29,
+              "children": []
+            },
+            {
+              "entity": "request type",
+              "startPos": 31,
+              "endPos": 34,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "how many leave days does nayer have left?",
+      "intent": "Leave Days Inquiry",
+      "entities": [
+        {
+          "entity": "leave inquiry request",
+          "startPos": 0,
+          "endPos": 39,
+          "children": [
+            {
+              "entity": "leave type",
+              "startPos": 9,
+              "endPos": 13,
+              "children": []
+            },
+            {
+              "entity": "person",
+              "startPos": 25,
+              "endPos": 29,
+              "children": []
+            },
+            {
+              "entity": "request type",
+              "startPos": 31,
+              "endPos": 39,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "how many maternity leave days do i have left?",
+      "intent": "Leave Days Inquiry",
+      "entities": [
+        {
+          "entity": "leave inquiry request",
+          "startPos": 0,
+          "endPos": 43,
+          "children": [
+            {
+              "entity": "leave type",
+              "startPos": 9,
+              "endPos": 23,
+              "children": []
+            },
+            {
+              "entity": "person",
+              "startPos": 33,
+              "endPos": 33,
+              "children": []
+            },
+            {
+              "entity": "request type",
+              "startPos": 35,
+              "endPos": 43,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "how many sick days did i use last month?",
+      "intent": "Leave Days Inquiry",
+      "entities": [
+        {
+          "entity": "leave inquiry request",
+          "startPos": 0,
+          "endPos": 38,
+          "children": [
+            {
+              "entity": "leave type",
+              "startPos": 9,
+              "endPos": 17,
+              "children": []
+            },
+            {
+              "entity": "person",
+              "startPos": 23,
+              "endPos": 23,
+              "children": []
+            },
+            {
+              "entity": "request type",
+              "startPos": 25,
+              "endPos": 27,
+              "children": []
+            },
+            {
+              "entity": "request period",
+              "startPos": 29,
+              "endPos": 38,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "how many sick days has alicia used?",
+      "intent": "Leave Days Inquiry",
+      "entities": [
+        {
+          "entity": "leave inquiry request",
+          "startPos": 0,
+          "endPos": 33,
+          "children": [
+            {
+              "entity": "leave type",
+              "startPos": 9,
+              "endPos": 17,
+              "children": []
+            },
+            {
+              "entity": "person",
+              "startPos": 23,
+              "endPos": 28,
+              "children": []
+            },
+            {
+              "entity": "request type",
+              "startPos": 30,
+              "endPos": 33,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "how many sick days have i used this month?",
+      "intent": "Leave Days Inquiry",
+      "entities": [
+        {
+          "entity": "leave inquiry request",
+          "startPos": 0,
+          "endPos": 41,
+          "children": [
+            {
+              "entity": "leave type",
+              "startPos": 9,
+              "endPos": 17,
+              "children": []
+            },
+            {
+              "entity": "person",
+              "startPos": 24,
+              "endPos": 24,
+              "children": []
+            },
+            {
+              "entity": "request type",
+              "startPos": 26,
+              "endPos": 29,
+              "children": []
+            },
+            {
+              "entity": "request period",
+              "startPos": 31,
+              "endPos": 40,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "how many vacation days do i have left for the year?",
+      "intent": "Leave Days Inquiry",
+      "entities": [
+        {
+          "entity": "leave inquiry request",
+          "startPos": 0,
+          "endPos": 49,
+          "children": [
+            {
+              "entity": "leave type",
+              "startPos": 9,
+              "endPos": 16,
+              "children": []
+            },
+            {
+              "entity": "person",
+              "startPos": 26,
+              "endPos": 26,
+              "children": []
+            },
+            {
+              "entity": "request type",
+              "startPos": 28,
+              "endPos": 36,
+              "children": []
+            },
+            {
+              "entity": "request period",
+              "startPos": 42,
+              "endPos": 49,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "how many vacation days have i used?",
+      "intent": "Leave Days Inquiry",
+      "entities": [
+        {
+          "entity": "leave inquiry request",
+          "startPos": 0,
+          "endPos": 33,
+          "children": [
+            {
+              "entity": "leave type",
+              "startPos": 9,
+              "endPos": 21,
+              "children": []
+            },
+            {
+              "entity": "person",
+              "startPos": 28,
+              "endPos": 28,
+              "children": []
+            },
+            {
+              "entity": "request type",
+              "startPos": 30,
+              "endPos": 33,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "howdy",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "i approve matt's unpaid leave request starting next month",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 2,
+          "endPos": 56,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 2,
+              "endPos": 8,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 10,
+              "endPos": 13,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 17,
+              "endPos": 28,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 30,
+              "endPos": 56,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need a new vacation startin on the 4th of july",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 9,
+          "endPos": 47,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 13,
+              "endPos": 20,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 22,
+              "endPos": 47,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 37,
+                  "endPos": 47,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need a vacation for 3 weeks",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 9,
+          "endPos": 28,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 9,
+              "endPos": 16,
+              "children": []
+            },
+            {
+              "entity": "Duration",
+              "startPos": 22,
+              "endPos": 28,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to attend a funeral next week, please schedule me for bereavement leave on friday",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 87,
+          "children": [
+            {
+              "entity": "Reason",
+              "startPos": 10,
+              "endPos": 35,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 61,
+              "endPos": 77,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 79,
+              "endPos": 87,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 82,
+                  "endPos": 87,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to cancel the vacation i have logged to start on june 3rd",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 63,
+          "children": [
+            {
+              "entity": "Leave submission modifier",
+              "startPos": 10,
+              "endPos": 15,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 21,
+              "endPos": 28,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 47,
+              "endPos": 63,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 56,
+                  "endPos": 63,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to go to my cousin's funeral, please let me take funeral leave next wed",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 77,
+          "children": [
+            {
+              "entity": "Reason",
+              "startPos": 10,
+              "endPos": 34,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 56,
+              "endPos": 62,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 70,
+              "endPos": 77,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 70,
+                  "endPos": 77,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to take 2 weeks of childcare leave april 3rd to home school my kids",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 73,
+          "children": [
+            {
+              "entity": "Duration",
+              "startPos": 15,
+              "endPos": 21,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 26,
+              "endPos": 40,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 42,
+              "endPos": 50,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 42,
+                  "endPos": 50,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "entity": "Reason",
+              "startPos": 55,
+              "endPos": 73,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to take 3 sick days next week for my surgery starting on tues",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 67,
+          "children": [
+            {
+              "entity": "Duration",
+              "startPos": 15,
+              "endPos": 15,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 17,
+              "endPos": 25,
+              "children": []
+            },
+            {
+              "entity": "Reason",
+              "startPos": 37,
+              "endPos": 50,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 52,
+              "endPos": 67,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 52,
+                  "endPos": 67,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to take childcare leave to take care of my baby while there is no daycare available",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 89,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 15,
+              "endPos": 29,
+              "children": []
+            },
+            {
+              "entity": "Reason",
+              "startPos": 34,
+              "endPos": 89,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to take friday off to go to the doctor",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 44,
+          "children": [
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 15,
+              "endPos": 20,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 15,
+                  "endPos": 20,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "entity": "Reason",
+              "startPos": 29,
+              "endPos": 44,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to take monday off for an appointment",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 43,
+          "children": [
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 15,
+              "endPos": 20,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 15,
+                  "endPos": 20,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "entity": "Reason",
+              "startPos": 26,
+              "endPos": 43,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to take some caregiver leave startin on april 3rd to homeschool my kids during covid",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 90,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 20,
+              "endPos": 34,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 36,
+              "endPos": 55,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 47,
+                  "endPos": 55,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "entity": "Reason",
+              "startPos": 60,
+              "endPos": 90,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to take some medical leave for a surgery on july 14th",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 59,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 20,
+              "endPos": 32,
+              "children": []
+            },
+            {
+              "entity": "Reason",
+              "startPos": 34,
+              "endPos": 46,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 48,
+              "endPos": 59,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 51,
+                  "endPos": 59,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to take some time off to take care of my kids during covid stay at home order",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 83,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 20,
+              "endPos": 27,
+              "children": []
+            },
+            {
+              "entity": "Reason",
+              "startPos": 32,
+              "endPos": 83,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to take some vacation starting may 3 and ending may 14",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 60,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 20,
+              "endPos": 27,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 29,
+              "endPos": 60,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 38,
+                  "endPos": 42,
+                  "children": []
+                },
+                {
+                  "entity": "End Date",
+                  "startPos": 55,
+                  "endPos": 60,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to take tuesday off for a funeral",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 39,
+          "children": [
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 15,
+              "endPos": 21,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 15,
+                  "endPos": 21,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "entity": "Reason",
+              "startPos": 27,
+              "endPos": 39,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to take unpaid leave from 4/13 to 5/13",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 44,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 15,
+              "endPos": 26,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 28,
+              "endPos": 44,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 33,
+                  "endPos": 36,
+                  "children": []
+                },
+                {
+                  "entity": "End Date",
+                  "startPos": 41,
+                  "endPos": 44,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i need to visit my mom starting feb 1st until the 20th",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 53,
+          "children": [
+            {
+              "entity": "Reason",
+              "startPos": 10,
+              "endPos": 21,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 23,
+              "endPos": 53,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 32,
+                  "endPos": 38,
+                  "children": []
+                },
+                {
+                  "entity": "End Date",
+                  "startPos": 46,
+                  "endPos": 53,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i want to go on vacation for 3 weeks starting august 20th",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 56,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 16,
+              "endPos": 23,
+              "children": []
+            },
+            {
+              "entity": "Duration",
+              "startPos": 29,
+              "endPos": 35,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 37,
+              "endPos": 56,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 46,
+                  "endPos": 56,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i want to take a 3 week vacation starting may 20th",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 49,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 24,
+              "endPos": 31,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 33,
+              "endPos": 49,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 42,
+                  "endPos": 49,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i want to take a vacation for 2 weeks starting monday",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 52,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 17,
+              "endPos": 24,
+              "children": []
+            },
+            {
+              "entity": "Duration",
+              "startPos": 30,
+              "endPos": 36,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 38,
+              "endPos": 52,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 47,
+                  "endPos": 52,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i was sick a couple weeks ago please make june 3rd through june 6th as sick days",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 2,
+          "endPos": 79,
+          "children": [
+            {
+              "entity": "Reason",
+              "startPos": 2,
+              "endPos": 9,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 42,
+              "endPos": 66,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 42,
+                  "endPos": 49,
+                  "children": []
+                },
+                {
+                  "entity": "End Date",
+                  "startPos": 59,
+                  "endPos": 66,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 71,
+              "endPos": 79,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i was sick last week, please mark my sick days last tuesday thru fri",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 2,
+          "endPos": 67,
+          "children": [
+            {
+              "entity": "Reason",
+              "startPos": 2,
+              "endPos": 9,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 37,
+              "endPos": 45,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 47,
+              "endPos": 67,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 52,
+                  "endPos": 58,
+                  "children": []
+                },
+                {
+                  "entity": "End Date",
+                  "startPos": 65,
+                  "endPos": 67,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i will be taking vacation 5/1 to 5/20",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 36,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 17,
+              "endPos": 24,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 26,
+              "endPos": 36,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 26,
+                  "endPos": 28,
+                  "children": []
+                },
+                {
+                  "entity": "End Date",
+                  "startPos": 33,
+                  "endPos": 36,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i will be taking vacation starting next tuesday",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 10,
+          "endPos": 46,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 17,
+              "endPos": 24,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 26,
+              "endPos": 46,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 35,
+                  "endPos": 46,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i would like to take a vacation for 2 weeks",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 16,
+          "endPos": 42,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 23,
+              "endPos": 30,
+              "children": []
+            },
+            {
+              "entity": "Duration",
+              "startPos": 36,
+              "endPos": 42,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i'll be taking vacation to visit my parents on march 14th for 2 weeks",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 8,
+          "endPos": 68,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 15,
+              "endPos": 22,
+              "children": []
+            },
+            {
+              "entity": "Reason",
+              "startPos": 24,
+              "endPos": 42,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 44,
+              "endPos": 56,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 47,
+                  "endPos": 56,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "entity": "Duration",
+              "startPos": 62,
+              "endPos": 68,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "i'll begin my maternity leave on july the 3rd",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 5,
+          "endPos": 44,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 14,
+              "endPos": 28,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 30,
+              "endPos": 44,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 33,
+                  "endPos": 44,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "it's ok for dina to take vacation next month",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 43,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 0,
+              "endPos": 6,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 12,
+              "endPos": 15,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 25,
+              "endPos": 32,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 34,
+              "endPos": 43,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "jims request is ok",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 17,
+          "children": [
+            {
+              "entity": "Requestor",
+              "startPos": 0,
+              "endPos": 3,
+              "children": []
+            },
+            {
+              "entity": "Manager Action",
+              "startPos": 13,
+              "endPos": 17,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "melanie's vacation is ok with me",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 0,
+          "endPos": 31,
+          "children": [
+            {
+              "entity": "Requestor",
+              "startPos": 0,
+              "endPos": 6,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 10,
+              "endPos": 17,
+              "children": []
+            },
+            {
+              "entity": "Manager Action",
+              "startPos": 19,
+              "endPos": 23,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "ok",
+      "intent": "Thanks",
+      "entities": []
+    },
+    {
+      "text": "please accept alicia's vacation request",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 7,
+          "endPos": 38,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 7,
+              "endPos": 12,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 14,
+              "endPos": 19,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 23,
+              "endPos": 30,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "please cancel my bereavement leave request for jun 3rd",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 7,
+          "endPos": 53,
+          "children": [
+            {
+              "entity": "Leave submission modifier",
+              "startPos": 7,
+              "endPos": 12,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 17,
+              "endPos": 33,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 47,
+              "endPos": 53,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 47,
+                  "endPos": 53,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "please cancel my caregiver leave",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 7,
+          "endPos": 31,
+          "children": [
+            {
+              "entity": "Leave submission modifier",
+              "startPos": 7,
+              "endPos": 12,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 17,
+              "endPos": 31,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "please cancel my caregiver leave that was starting on june 1st",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 7,
+          "endPos": 61,
+          "children": [
+            {
+              "entity": "Leave submission modifier",
+              "startPos": 7,
+              "endPos": 12,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 17,
+              "endPos": 31,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 38,
+              "endPos": 61,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 54,
+                  "endPos": 61,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "please change my vacation to start on may 3rd instead of june 15th",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 7,
+          "endPos": 65,
+          "children": [
+            {
+              "entity": "Leave submission modifier",
+              "startPos": 7,
+              "endPos": 12,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 17,
+              "endPos": 24,
+              "children": []
+            },
+            {
+              "entity": "New dates phrase",
+              "startPos": 29,
+              "endPos": 44,
+              "children": [
+                {
+                  "entity": "New Start Date",
+                  "startPos": 38,
+                  "endPos": 44,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 57,
+              "endPos": 65,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 57,
+                  "endPos": 65,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "please decline shirly's unpaid leave request because we have too many deliverables in that timeframe",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 7,
+          "endPos": 99,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 7,
+              "endPos": 13,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 15,
+              "endPos": 20,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 24,
+              "endPos": 35,
+              "children": []
+            },
+            {
+              "entity": "Reason",
+              "startPos": 45,
+              "endPos": 99,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "please make the 5th of may thru may 9th vacation for me",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 7,
+          "endPos": 54,
+          "children": [
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 16,
+              "endPos": 38,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 16,
+                  "endPos": 25,
+                  "children": []
+                },
+                {
+                  "entity": "End Date",
+                  "startPos": 32,
+                  "endPos": 38,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 40,
+              "endPos": 47,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "please reject yanling's leave request because it was entered for the wrong days",
+      "intent": "Manager Approval Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 7,
+          "endPos": 78,
+          "children": [
+            {
+              "entity": "Manager Action",
+              "startPos": 7,
+              "endPos": 12,
+              "children": []
+            },
+            {
+              "entity": "Requestor",
+              "startPos": 14,
+              "endPos": 20,
+              "children": []
+            },
+            {
+              "entity": "Leave Type",
+              "startPos": 24,
+              "endPos": 28,
+              "children": []
+            },
+            {
+              "entity": "Reason",
+              "startPos": 38,
+              "endPos": 78,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "please schedule my bereavement leave starting on june 1st because my aunt died",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 7,
+          "endPos": 77,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 19,
+              "endPos": 35,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 37,
+              "endPos": 56,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 49,
+                  "endPos": 56,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "entity": "Reason",
+              "startPos": 58,
+              "endPos": 77,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "please schedule my vacation from may 21st to june 3rd, i am going to see my family",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 7,
+          "endPos": 81,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 19,
+              "endPos": 26,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 28,
+              "endPos": 52,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 33,
+                  "endPos": 40,
+                  "children": []
+                },
+                {
+                  "entity": "End Date",
+                  "startPos": 45,
+                  "endPos": 52,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "entity": "Reason",
+              "startPos": 55,
+              "endPos": 81,
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "please schedule my vacation starting march 3rd and ending on march 13ths",
+      "intent": "Leave Action",
+      "entities": [
+        {
+          "entity": "leave phrase",
+          "startPos": 7,
+          "endPos": 71,
+          "children": [
+            {
+              "entity": "Leave Type",
+              "startPos": 19,
+              "endPos": 26,
+              "children": []
+            },
+            {
+              "entity": "Leave Dates Phrase",
+              "startPos": 28,
+              "endPos": 71,
+              "children": [
+                {
+                  "entity": "Start Date",
+                  "startPos": 37,
+                  "endPos": 45,
+                  "children": []
+                },
+                {
+                  "entity": "End Date",
+                  "startPos": 61,
+                  "endPos": 71,
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "text": "thanks",
+      "intent": "Thanks",
+      "entities": []
+    },
+    {
+      "text": "what holidays do we get off?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what time is it?",
+      "intent": "None",
+      "entities": []
+    },
+    {
+      "text": "what's up",
+      "intent": "Greeting",
+      "entities": []
+    },
+    {
+      "text": "when is labor day?",
+      "intent": "None",
+      "entities": []
+    }
+  ],
+  "versionId": "DemoStart",
+  "name": "HRBot",
+  "desc": "Testing for Build",
+  "culture": "en-us",
+  "tokenizerVersion": "1.0.0",
+  "patternAnyEntities": [],
+  "regex_entities": [
+    {
+      "name": "ordinal days of the month",
+      "regexPattern": "(1st|2nd|3rd|[4-9]th|(2|3)0th|1\\dth|21st|22nd|23rd|2[4-9]th|31st)",
+      "roles": []
+    }
+  ],
+  "phraselists": [
+    {
+      "name": "leave types",
+      "mode": true,
+      "words": "vacation,leave,bereavement,unpaid leave,paid leave,paid holiday,maternity leave,paternity leave,caregiver,child care,childcare,maternity,paternity,time off,sick days,sick leave,sick time",
+      "activated": true,
+      "enabledForAllModels": false
+    },
+    {
+      "name": "modifier words",
+      "mode": true,
+      "words": "change,edit,cancel,delete,update,remove",
+      "activated": true,
+      "enabledForAllModels": false
+    },
+    {
+      "name": "start date words",
+      "mode": true,
+      "words": "starting,starting on,from,from the,beginning on,startin,begin",
+      "activated": true,
+      "enabledForAllModels": false
+    },
+    {
+      "name": "end date words",
+      "mode": true,
+      "words": "ending,ending on,until,through,through the,thru,thru the,to,to the,til,til the",
+      "activated": true,
+      "enabledForAllModels": false
+    },
+    {
+      "name": "first person words",
+      "mode": true,
+      "words": "my,i,me",
+      "activated": true,
+      "enabledForAllModels": false
+    },
+    {
+      "name": "leave taken inquiry words",
+      "mode": true,
+      "words": "how many,have i used,have left",
+      "activated": true,
+      "enabledForAllModels": false
+    },
+    {
+      "name": "request period words",
+      "mode": true,
+      "words": "month,year,this month,next month,last year,this year",
+      "activated": true,
+      "enabledForAllModels": false
+    },
+    {
+      "name": "i word",
+      "mode": true,
+      "words": "i",
+      "activated": true,
+      "enabledForAllModels": false
+    },
+    {
+      "name": "time period words",
+      "mode": true,
+      "words": "month,week,year,day",
+      "activated": true,
+      "enabledForAllModels": false
+    },
+    {
+      "name": "question mark",
+      "mode": true,
+      "words": "?",
+      "activated": true,
+      "enabledForAllModels": false
+    },
+    {
+      "name": "take",
+      "mode": true,
+      "words": "take a",
+      "activated": true,
+      "enabledForAllModels": false
+    }
+  ],
+  "regex_features": [],
+  "patterns": [],
+  "settings": [
+    {
+      "name": "NormalizeWordForm",
+      "value": "true"
+    }
+  ]
+}
